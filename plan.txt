@@ -1,0 +1,22 @@
+Thieves can be different types:
+Fighter - does more damage
+Thinker - unlocks safe faster
+Trickster - goes undetected by guards and civilian (until they harm anyone or similar)
+Sparks - disables alarm
+
+
+The safe can be:
+Unlocked - money is safe to take out
+Broken - can take money be alarm has been triggered
+Destroyed - money is also destroyed (eg. bomb has blown it all up)
+
+
+Alarm:
+Will go off for a certain number of turns before polive arrive - game over
+
+
+Ideas?:
+Find clues to work out safe code - thinker needs less clues to work it out
+Tricksters can talk to people to get clues but if they pry too much they may give themselves away
+Clues can be passed on to teammates in the same room 
+ - if one teammate in a room gets a clue then all in the room get it
