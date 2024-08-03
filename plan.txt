@@ -20,3 +20,9 @@ Find clues to work out safe code - thinker needs less clues to work it out
 Tricksters can talk to people to get clues but if they pry too much they may give themselves away
 Clues can be passed on to teammates in the same room 
  - if one teammate in a room gets a clue then all in the room get it
+
+Rooms:
+factory to create rooms 
+num of guards and civilians in each room will be a random int 
+clues can be found in some furniture (eventually)
+different levels have different number of rooms - will add different rooms too
