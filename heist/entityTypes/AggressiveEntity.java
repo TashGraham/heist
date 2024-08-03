@@ -16,4 +16,9 @@ public abstract class AggressiveEntity extends WorldEntity {
         return damage;
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Damage: " + damage;
+    }
+
 }

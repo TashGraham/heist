@@ -6,6 +6,7 @@ import heist.rooms.products.Room;
 
 public interface RoomFactory {
 
-    Room createRoom();
+    // number of guards and civilians per room can be chosen
+    Room createRoom(int numOfGuards, int numOfCivilians);
     
 }

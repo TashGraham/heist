@@ -31,5 +31,25 @@ public abstract class Room {
     public int getNumCivilians() {
         return numOfCivilians;
     }
+
+    public String pluralOrNotGuards() {
+        // guards or guard for num of guards
+        if (numOfGuards == 0) {
+            return " guard";
+        }
+        return " guards";
+    }
+
+    public String plurOrNotCivilians() {
+        if (numOfCivilians == 0) {
+            return " civilian";
+        }
+        return " civilians";
+    }
+
+    @Override
+    public String toString() {
+        return name+", in it there is a "+furniture+", "+numOfGuards+pluralOrNotGuards()+" and "+numOfCivilians+plurOrNotCivilians()+".";
+    }
     
 }

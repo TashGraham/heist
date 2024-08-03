@@ -8,8 +8,8 @@ import heist.rooms.products.Room;
 public class LivingRoomFactory implements RoomFactory {
 
     @Override
-    public Room createRoom() {
-        return new LivingRoom("living room", "coffee table", 0, 1);
+    public Room createRoom(int numOfGuards, int numOfCivilians) {
+        return new LivingRoom("living room", "coffee table", numOfGuards, numOfCivilians);
     }
     
 }

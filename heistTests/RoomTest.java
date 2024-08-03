@@ -10,9 +10,9 @@ import heist.rooms.products.Room;
 public class RoomTest {
 
     private RoomFactory bedroomFactory = new BedroomFactory();
-    private Room bedroom = bedroomFactory.createRoom();
+    private Room bedroom = bedroomFactory.createRoom(0, 1);
     private RoomFactory livRoomFactory = new LivingRoomFactory();
-    private Room livingRoom = livRoomFactory.createRoom();
+    private Room livingRoom = livRoomFactory.createRoom(0, 1);
 
     @Test
     public void testBedroomName() {
