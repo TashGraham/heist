@@ -1,4 +1,4 @@
-package heistTests;
+package heistTests.roomTests;
 
 import org.junit.*;
 
@@ -7,7 +7,7 @@ import heist.rooms.factories.LivingRoomFactory;
 import heist.rooms.factories.RoomFactory;
 import heist.rooms.products.Room;
 
-public class RoomTest {
+public class RoomFactoryTest {
 
     private RoomFactory bedroomFactory = new BedroomFactory();
     private Room bedroom = bedroomFactory.createRoom(0, 1);

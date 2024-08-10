@@ -13,6 +13,24 @@ public abstract class WorldEntity {
         this.currentHealth = currentHealth;
     }
 
+    public void takeDamage(int damage) {
+        System.out.println("Taking "+damage+" points of damage.");
+        System.out.println("Health before damage: "+currentHealth);
+        if (damage > 0) {
+            currentHealth -= damage;
+            if (currentHealth <= 0) {
+                // health will not be negative just 0
+                currentHealth = 0;
+                conscious = false;
+            }
+        }
+        System.out.println("Health after taking attack: "+currentHealth);
+        if (!conscious) {
+            System.out.println(name+" is no longer consious.");
+        }
+
+    }
+
     public String getName() {
         return name;
     }

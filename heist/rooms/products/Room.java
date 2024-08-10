@@ -1,5 +1,4 @@
-// product interface representing a room
-
+// product class representing a room
 package heist.rooms.products;
 
 public abstract class Room {

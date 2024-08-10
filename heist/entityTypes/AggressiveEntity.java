@@ -12,6 +12,14 @@ public abstract class AggressiveEntity extends WorldEntity {
         // weapon will also be here
     }
 
+    public void attack(WorldEntity worldEntity) {
+        if (!worldEntity.isConscious()) {
+            System.out.println(worldEntity.getName()+" is not consious there is no need to attack.");
+        } else {
+            worldEntity.takeDamage(damage);
+        }
+    }
+
     public int getDamage() {
         return damage;
     }
