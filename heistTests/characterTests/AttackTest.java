@@ -2,13 +2,17 @@ package heistTests.characterTests;
 
 import org.junit.*;
 
+import heist.Damage;
+import heist.DamageType;
 import heist.characters.Civilian;
 import heist.characters.Guard;
 
 public class AttackTest {
     
-    Guard guard = new Guard("guard", 70, 70, 20);
-    Guard strongGuard = new Guard("string guard", 70, 70, 60);
+    Damage bigDamage = new Damage(60, DamageType.GUN);
+    Damage smallDamage = new Damage(20, DamageType.FISTS);
+    Guard guard = new Guard("guard", 70, 70, smallDamage);
+    Guard strongGuard = new Guard("string guard", 70, 70, bigDamage);
     Civilian civ = new Civilian("civy", 50, 50);
 
     @Test

@@ -2,11 +2,14 @@ package heistTests.player;
 
 import org.junit.*;
 
+import heist.Damage;
+import heist.DamageType;
 import heist.player.Player;
 
 public class PlayerUnitTest {
 
-    Player player = new Player("player", 100, 100, 15);
+    Damage damage = new Damage(5, DamageType.FISTS);
+    Player player = new Player("player", 100, 100, damage);
 
     @Test
     public void playerNameTest() {
@@ -25,7 +28,7 @@ public class PlayerUnitTest {
 
     @Test
     public void playerDamageTest() {
-        Assert.assertEquals(15, player.getDamage());
+        Assert.assertEquals(5, player.getAttack().getAmount());
     }
 
     @Test
@@ -35,7 +38,7 @@ public class PlayerUnitTest {
 
     @Test
     public void playerToStringTest() {
-        Assert.assertEquals("Name: player, Max Health: 100, Current Health: 100, Damage: 15", player.toString());
+        Assert.assertEquals("Name: player, Max Health: 100, Current Health: 100, Attack: FISTS(5)", player.toString());
     }
     
 }

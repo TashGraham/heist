@@ -2,11 +2,14 @@ package heistTests.characterTests;
 
 import org.junit.*;
 
+import heist.Damage;
+import heist.DamageType;
 import heist.characters.Guard;
 
 public class GuardUnitTest {
 
-    Guard guard = new Guard("guard", 70, 70, 10);
+    Damage damage = new Damage(10, DamageType.BATON);
+    Guard guard = new Guard("guard", 70, 70, damage);
 
     @Test
     public void guardNameTest() {
@@ -25,7 +28,7 @@ public class GuardUnitTest {
 
     @Test
     public void guardDamageTest() {
-        Assert.assertEquals(10, guard.getDamage());
+        Assert.assertEquals(10, guard.getAttack().getAmount());
     }
 
     @Test
@@ -36,7 +39,7 @@ public class GuardUnitTest {
 
     @Test
     public void guardToStringTest() {
-        Assert.assertEquals("Name: guard, Max Health: 70, Current Health: 70, Damage: 10", guard.toString());
+        Assert.assertEquals("Name: guard, Max Health: 70, Current Health: 70, Attack: BATON(10)", guard.toString());
     }
 
 

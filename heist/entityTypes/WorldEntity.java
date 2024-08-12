@@ -1,5 +1,9 @@
 package heist.entityTypes;
 
+import static org.junit.Assert.assertNotSame;
+
+import heist.Damage;
+
 public abstract class WorldEntity {
     // all entities will have these attributes
     protected String name;
@@ -13,21 +17,19 @@ public abstract class WorldEntity {
         this.currentHealth = currentHealth;
     }
 
-    public void takeDamage(int damage) {
-        System.out.println("Taking "+damage+" points of damage.");
-        System.out.println("Health before damage: "+currentHealth);
-        if (damage > 0) {
-            currentHealth -= damage;
+    public void takeDamage(Damage attack) {
+        System.out.println("Taking damage of type " +  attack.getDamageType().toString());
+        System.out.println("Health before attack: " + currentHealth);
+        int amount = attack.getAmount();
+        System.out.println("Taking " + amount + " points of damage.");
+        if (amount > 0) {
+            currentHealth -= amount;
             if (currentHealth <= 0) {
-                // health will not be negative just 0
                 currentHealth = 0;
                 conscious = false;
             }
         }
-        System.out.println("Health after taking attack: "+currentHealth);
-        if (!conscious) {
-            System.out.println(name+" is no longer consious.");
-        }
+        System.out.println("Health after attack: " + currentHealth);
 
     }
 

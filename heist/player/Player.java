@@ -1,11 +1,12 @@
 package heist.player;
 
+import heist.Damage;
 import heist.entityTypes.Thief;
 
 public class Player extends Thief {
 
-    public Player(String name, int maxHealth, int currentHealth, int damage) {
-        super(name, maxHealth, currentHealth, damage);
+    public Player(String name, int maxHealth, int currentHealth, Damage attack) {
+        super(name, maxHealth, currentHealth, attack);
     }
     
 }

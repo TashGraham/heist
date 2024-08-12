@@ -1,14 +1,16 @@
 package heist.entityTypes;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import heist.Damage;
+
 public abstract class AggressiveEntity extends WorldEntity {
 
-    protected int damage;
-    // will be adding weapon class
-    //protected Weapon weapon;
+    protected Damage attack;
 
-    public AggressiveEntity(String name, int maxHealth, int currentHealth, int damage) {
+    public AggressiveEntity(String name, int maxHealth, int currentHealth, Damage attack) {
         super(name, maxHealth, currentHealth);
-        this.damage = damage;
+        this.attack = attack;
         // weapon will also be here
     }
 
@@ -16,17 +18,17 @@ public abstract class AggressiveEntity extends WorldEntity {
         if (!worldEntity.isConscious()) {
             System.out.println(worldEntity.getName()+" is not consious there is no need to attack.");
         } else {
-            worldEntity.takeDamage(damage);
+            worldEntity.takeDamage(attack);
         }
     }
 
-    public int getDamage() {
-        return damage;
+    public Damage getAttack() {
+        return attack;
     }
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Damage: " + damage;
+        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Attack: " + attack.toString();
     }
 
 }

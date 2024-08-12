@@ -22,8 +22,9 @@ public class World {
         // currently just making one of each room with no guards and a civilian
         room1 = livFactory.createRoom(0, 1);
         room2 = bedFactory.createRoom(0, 1);
+        Damage damage = new Damage(20, DamageType.FISTS);
         if (firstTime) {
-            player = new Player("Peter", 100, 100, 10);
+            player = new Player("Peter", 100, 100, damage);
         }
     }
 

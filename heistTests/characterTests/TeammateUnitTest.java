@@ -2,11 +2,14 @@ package heistTests.characterTests;
 
 import org.junit.*;
 
+import heist.Damage;
+import heist.DamageType;
 import heist.characters.Teammate;
 
 public class TeammateUnitTest {
 
-    Teammate teamie = new Teammate("Buddy", 70, 70, 10);
+    Damage damage = new Damage(10, DamageType.KNIFE);
+    Teammate teamie = new Teammate("Buddy", 70, 70, damage);
 
     @Test
     public void teamNameTest() {
@@ -25,7 +28,7 @@ public class TeammateUnitTest {
 
     @Test
     public void teamDamageTest() {
-        Assert.assertEquals(10, teamie.getDamage());
+        Assert.assertEquals(10, teamie.getAttack().getAmount());
     }
 
     @Test
@@ -36,7 +39,7 @@ public class TeammateUnitTest {
 
     @Test
     public void teamToStringTest() {
-        Assert.assertEquals("Name: Buddy, Max Health: 70, Current Health: 70, Damage: 10", teamie.toString());
+        Assert.assertEquals("Name: Buddy, Max Health: 70, Current Health: 70, Attack: KNIFE(10)", teamie.toString());
     }
     
 }
