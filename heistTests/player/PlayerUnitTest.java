@@ -32,13 +32,24 @@ public class PlayerUnitTest {
     }
 
     @Test
+    public void playerProtectionTest() {
+        Assert.assertEquals(0, player.getProtectionLevel());
+    }
+
+    @Test
+    public void playerChangeProtectionTest() {
+        player.setProtectionLevel(2);
+        Assert.assertEquals(2, player.getProtectionLevel());
+    }
+
+    @Test
     public void playerIsConscious() {
         Assert.assertTrue(player.isConscious());
     }
 
     @Test
     public void playerToStringTest() {
-        Assert.assertEquals("Name: player, Max Health: 100, Current Health: 100, Attack: FISTS(5)", player.toString());
+        Assert.assertEquals("Name: player, Max Health: 100, Current Health: 100, Protection level: 0, Attack: FISTS(5)", player.toString());
     }
     
 }

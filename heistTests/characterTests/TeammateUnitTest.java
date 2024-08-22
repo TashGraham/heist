@@ -32,6 +32,17 @@ public class TeammateUnitTest {
     }
 
     @Test
+    public void teamProtectionTest() {
+        Assert.assertEquals(0, teamie.getProtectionLevel());
+    }
+
+    @Test
+    public void teamChangeProtectionTest() {
+        teamie.setProtectionLevel(2);
+        Assert.assertEquals(2, teamie.getProtectionLevel());
+    }
+
+    @Test
     public void teamconsciousTest() {
         // should default as conscious
         Assert.assertTrue(teamie.isConscious());
@@ -39,7 +50,7 @@ public class TeammateUnitTest {
 
     @Test
     public void teamToStringTest() {
-        Assert.assertEquals("Name: Buddy, Max Health: 70, Current Health: 70, Attack: KNIFE(10)", teamie.toString());
+        Assert.assertEquals("Name: Buddy, Max Health: 70, Current Health: 70, Protection level: 0, Attack: KNIFE(10)", teamie.toString());
     }
     
 }

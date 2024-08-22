@@ -1,7 +1,5 @@
 package heist.entityTypes;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import heist.Damage;
 
 public abstract class AggressiveEntity extends WorldEntity {
@@ -28,7 +26,7 @@ public abstract class AggressiveEntity extends WorldEntity {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Attack: " + attack.toString();
+        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Protection level: " + protectionLevel + ", Attack: " + attack.toString();
     }
 
 }

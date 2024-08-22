@@ -1,7 +1,5 @@
 package heist.entityTypes;
 
-import static org.junit.Assert.assertNotSame;
-
 import heist.Damage;
 
 public abstract class WorldEntity {
@@ -9,12 +7,14 @@ public abstract class WorldEntity {
     protected String name;
     protected int maxHealth;
     protected int currentHealth;
+    protected int protectionLevel;
     public boolean conscious = true;
 
     public WorldEntity(String name, int maxHealth, int currentHealth) {
         this.name = name;
         this.maxHealth = maxHealth;
         this.currentHealth = currentHealth;
+        this.protectionLevel = 0; // defualt 0 unless for all except guard
     }
 
     public void takeDamage(Damage attack) {
@@ -53,9 +53,18 @@ public abstract class WorldEntity {
         currentHealth = health;
     }
 
+    public int getProtectionLevel() {
+        return protectionLevel;
+    }
+
+    public void setProtectionLevel(int newProtectLevel) {
+        // entities can pick up protection
+        protectionLevel = newProtectLevel;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth;
+        return "Name: " + name + ", Max Health: " + maxHealth + ", Current Health: " + currentHealth + ", Protection level: " + protectionLevel;
     }
 
 }

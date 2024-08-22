@@ -26,3 +26,10 @@ factory to create rooms
 num of guards and civilians in each room will be a random int 
 clues can be found in some furniture (eventually)
 different levels have different number of rooms - will add different rooms too
+
+
+Protection level:
+all entities have a protection value 
+someone with no protection has a value of 0
+if they are wearing a good quality bulletproof vest then they have a high value
+this will affect how much damage the entity takes

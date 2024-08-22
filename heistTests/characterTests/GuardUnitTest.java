@@ -32,6 +32,17 @@ public class GuardUnitTest {
     }
 
     @Test
+    public void guardProtectionTest() {
+        Assert.assertEquals(5, guard.getProtectionLevel());
+    }
+
+    @Test
+    public void guardChangeProtectionTest() {
+        guard.setProtectionLevel(7);
+        Assert.assertEquals(7, guard.getProtectionLevel());
+    }
+
+    @Test
     public void consciousTest() {
         // should default as conscious
         Assert.assertTrue(guard.isConscious());
@@ -39,7 +50,7 @@ public class GuardUnitTest {
 
     @Test
     public void guardToStringTest() {
-        Assert.assertEquals("Name: guard, Max Health: 70, Current Health: 70, Attack: BATON(10)", guard.toString());
+        Assert.assertEquals("Name: guard, Max Health: 70, Current Health: 70, Protection level: 5, Attack: BATON(10)", guard.toString());
     }
 
 

@@ -24,6 +24,17 @@ public class CivilianUnitTest {
     }
 
     @Test
+    public void civilianProtectionTest() {
+        Assert.assertEquals(0, civ.getProtectionLevel());
+    }
+
+    @Test
+    public void civilianChangeProtectionTest() {
+        civ.setProtectionLevel(2);
+        Assert.assertEquals(2, civ.getProtectionLevel());
+    }
+
+    @Test
     public void consciousTest() {
         // should default as conscious
         Assert.assertTrue(civ.isConscious());
@@ -31,6 +42,6 @@ public class CivilianUnitTest {
     
     @Test
     public void civilianToString() {
-        Assert.assertEquals("Name: TestCivilian, Max Health: 50, Current Health: 50", civ.toString());
+        Assert.assertEquals("Name: TestCivilian, Max Health: 50, Current Health: 50, Protection level: 0", civ.toString());
     }
 }
