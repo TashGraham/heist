@@ -19,18 +19,32 @@ public abstract class WorldEntity {
 
     public void takeDamage(Damage attack) {
         System.out.println("Taking damage of type " +  attack.getDamageType().toString());
-        System.out.println("Health before attack: " + currentHealth);
-        int amount = attack.getAmount();
-        System.out.println("Taking " + amount + " points of damage.");
-        if (amount > 0) {
-            currentHealth -= amount;
+        System.out.println("Health before attack: " + currentHealth + ", protection level: " + protectionLevel);
+        int attackAmount = attack.getAmount();
+        int damageTaken = calculateDamageTaken(attackAmount);
+        System.out.println("Attacked with " + attackAmount + " points of damage.");
+        System.out.println("Taking " + damageTaken + " points of damage.");
+        if (damageTaken > 0) {
+            currentHealth -= damageTaken;
             if (currentHealth <= 0) {
                 currentHealth = 0;
                 conscious = false;
             }
         }
-        System.out.println("Health after attack: " + currentHealth);
+        System.out.println("Health after attack: " + currentHealth +"\n");
 
+    }
+
+    // method to calculate how many points of damage are taken 
+    // based on protection levels and attack
+    private int calculateDamageTaken(int amount) {
+        // this is the percentage of damage that will get through the protection
+        float temp = 10 - protectionLevel;
+        float percentageDamageTaken = (temp/10); 
+        float damageTaken = amount * percentageDamageTaken;
+        // returning the amount of damage to be taken as the nearest integer
+        amount = Math.round(damageTaken); 
+        return amount;
     }
 
     public String getName() {
